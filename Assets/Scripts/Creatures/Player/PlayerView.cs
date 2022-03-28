@@ -46,7 +46,7 @@ namespace BlackMountain.Creatures.Player
             var deltaZ = Input.GetAxisRaw("Vertical") * _model.walkSpeed;
 
             _animator.SetFloat("HorizontalSpeed", deltaX);
-            _animator.SetFloat("VerticalSpeed", Mathf.Approximately(deltaX, 0) ? deltaZ : 0);
+            _animator.SetFloat("VerticalSpeed",  Mathf.Approximately(deltaX, 0) ? deltaZ : 0);
 
             var movement = new Vector3(deltaX, 0, deltaZ);
             movement = Vector3.ClampMagnitude(movement, _model.walkSpeed);
